@@ -19,3 +19,20 @@
 .pilt:active {
   transform: scale(0.9);
 }
+
+.golden-text {
+  color: goldenrod;
+}
+
+.sum-active {
+  border-color: rgb(227 6 140);
+  color: rgb(227 6 140);
+}
+
+.city-active {
+  text-decoration: underline;
+}
+
+.language-active {
+  font-weight: bold;
+}
