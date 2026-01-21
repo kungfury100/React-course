@@ -3,6 +3,7 @@ import { Route, Routes, Link } from 'react-router-dom'
 import Avaleht from './pages/Avaleht.jsx'
 import VaataArvuteid from './pages/VaataArvuteid.jsx'
 import LisaArvuti from './pages/LisaArvuti.jsx'
+import NotFound from './pages/NotFound.jsx'
 
 function App() {
 
@@ -21,7 +22,9 @@ function App() {
         <Route path="" exact element={ <Avaleht /> } />
         <Route path="all" exact element={ <VaataArvuteid /> } />
         <Route path="add" exact element={<LisaArvuti /> } />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+
     </>
   )
 }

@@ -4,6 +4,7 @@ import Avaleht from './pages/Avaleht';
 import Uudised from './pages/Uudised';
 import Kontakt from './pages/Kontakt';
 import Meist from './pages/Meist';
+import NotFound from './pages/NotFound.jsx'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/uudised" element={ <Uudised /> } />
           <Route path="/kontakt" element={ <Kontakt /> } />
           <Route path="/meist" element={ <Meist /> } />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </>
