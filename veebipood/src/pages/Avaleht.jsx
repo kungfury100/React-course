@@ -7,6 +7,7 @@ function Avaleht() {
   const [amount, setAmount] = useState(0);
   const [message, setMessage] = useState("Muuda kogust!")
   const [liked, setLiked] = useState(false);
+  const [products, setProducts] = useState(["Coca-cola", "Fanta", "Sprite"]);
 
   function zeroAmount() {
     setAmount(0);
@@ -36,6 +37,13 @@ function Avaleht() {
       <button disabled={amount === 0} onClick={() => decreaseAmount()}>-</button>
       <span className={amount > 10 ? "golden-text" : undefined}>{amount}</span>
       <button onClick={() => increaseAmount()}>+</button>
+
+      <br /><br />
+
+      <div>
+        {products.map(product => <div key={product}>{product}</div>)}
+      </div>
+      <button onClick={() => setProducts(["Coca-cola", "Fanta", "Sprite", "Red Bull"])}>Lisa Red Bull</button>
     </div>
   )
 }
