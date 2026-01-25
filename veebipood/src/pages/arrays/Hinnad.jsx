@@ -32,6 +32,7 @@ function Hinnad() {
 
     return (
         <div>
+          <br />
             <div>
               <Link to="/autod">
                   <button>Autod</button>

@@ -65,6 +65,7 @@ function Autod() {
 
   return (
     <div>
+      <br />
       <div>
           <Link to="/autod">
               <button>Autod</button>
@@ -85,12 +86,14 @@ function Autod() {
               <button>Tooted</button>
           </Link>
       </div><br /><br /><br />
+      <p className="title">Sorteeri</p>
       <button onClick={sortAZ}>Sorteeri A-Z</button>
       <button onClick={sortZA}>Sorteeri Z-A</button>
       <button onClick={sortLettersAsc}>Sorteeri tähemärgid kasvavalt</button>
       <button onClick={sortLettersDesc}>Sorteeri tähemärgid kahanevalt</button>
       <button onClick={sortLettersAZ}>Sorteeri kolmas täht A-Z</button>
       <br /><br />
+      <p className="title">Filtreeri</p>
       <button onClick={filterByEndsLetterI}>Jäta alles i-ga lõppevad</button>
       <button onClick={filterByLength7}>Jäta alles 7-tähelised</button>
       <button onClick={filterByLengthMoreThan6}>Jäta alles vähemalt 6-tähelised</button>

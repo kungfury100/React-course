@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 function HaldaKasutajad() {
     return (
         <div>
+          <br />
             <div>
                 <Link to="/halda-autod">
                     <button>Halda autosid</button>

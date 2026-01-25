@@ -5,6 +5,7 @@ function Esindused() {
   const [linn, setLinn] = useState('tallinn')
   return (
     <div>
+      <br />
         <div>
             <Link to="/autod">
                 <button>Autod</button>

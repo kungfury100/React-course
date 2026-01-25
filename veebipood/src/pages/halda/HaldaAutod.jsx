@@ -14,6 +14,7 @@ function HaldaAutod() {
 
     return (
         <div>
+            <br />
             <div>
                 <Link to="/halda-autod">
                     <button>Halda autosid</button>
@@ -49,7 +50,7 @@ function HaldaAutod() {
                             <td>{index+1}</td>
                             <td>{index}</td>
                             <td>{car}</td>
-                            <td><button onClick={() => deleteCar(index)}>Delete</button></td>
+                            <td><button onClick={() => deleteCar(index)}>X</button></td>
                         </tr>
                     )}
                 </tbody>

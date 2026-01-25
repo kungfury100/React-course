@@ -66,17 +66,33 @@ function Tootajad() {
   }
 
   const filterByEqualCharacters = () => {
-  const result = employees.filter(employee => employee.length % 2 === 0);
-  setEmployees(result);
-}
+    const result = employees.filter(employee => employee.length % 2 === 0);
+    setEmployees(result);
+  }
 
-const filterByOddCharacters = () => {
-  const result = employees.filter(employee => employee.length % 2 !== 0);
-  setEmployees(result);
-}
+  const filterByOddCharacters = () => {
+    const result = employees.filter(employee => employee.length % 2 !== 0);
+    setEmployees(result);
+  }
+
+  const filterByEndsWithA = () => {
+    const result = employees.filter(employee => employee[employee.length - 1] === "a");
+    setEmployees(result);
+  }
+
+  const filterByAtLeast10Characters = () => {
+    const result = employees.filter(employee => employee.length >= 10);
+    setEmployees(result);
+  }
+
+  const filterByExactly15Characters = () => {
+    const result = employees.filter(employee => employee.length === 15);
+    setEmployees(result);
+  }
 
   return (
     <div>
+      <br />
       <div>
         <Link to="/autod">
           <button>Autod</button>
@@ -112,6 +128,9 @@ const filterByOddCharacters = () => {
       <button onClick={filterByStartsWithM}>Algab "m" tähega</button>
       <button onClick={filterByEqualCharacters}>Paaris arv tähti</button>
       <button onClick={filterByOddCharacters}>Paaritu arv tähti</button>
+      <button onClick={filterByEndsWithA}>Lõppeb "a" tähega</button>
+      <button onClick={filterByAtLeast10Characters}>Vähemalt 10 tähte</button>
+      <button onClick={filterByExactly15Characters}>Täpselt 15 tähte</button>
       <br /><br />
       {employees.map(employee => <div key={employee}>{employee}</div>)} <br />
       {employees.length} tk

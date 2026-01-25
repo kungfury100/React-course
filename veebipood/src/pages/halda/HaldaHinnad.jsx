@@ -13,6 +13,7 @@ function HaldaHinnad() {
 
     return (
         <div>
+            <br />
             <div>
                 <Link to="/halda-autod">
                     <button>Halda autosid</button>
