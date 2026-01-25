@@ -1,9 +1,30 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 function Esindused() {
   const [linn, setLinn] = useState('tallinn')
   return (
     <div>
+        <div>
+            <Link to="/autod">
+                <button>Autod</button>
+            </Link>
+            <Link to="/esindused">
+                <button>Esindused</button>
+            </Link>
+            <Link to="/hinnad">
+                <button>Hinnad</button>
+            </Link>
+            <Link to="/kasutajad">
+                <button>Kasutajad</button>
+            </Link>
+            <Link to="/tootajad">
+                <button>Töötajad</button>
+            </Link>
+            <Link to="/tooted">
+                <button>Tooted</button>
+            </Link>
+        </div><br /><br /><br />
         <div>Hetkel aktiivne linn: {linn}</div>
         <button className={linn === "tallinn" ? "city-active" : undefined} onClick={() => setLinn('tallinn')}>Tallinn</button>
         <button className={linn === "tartu" ? "city-active" : undefined} onClick={() => setLinn('tartu')}>Tartu</button>

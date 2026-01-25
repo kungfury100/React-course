@@ -1,6 +1,29 @@
+import { Link } from "react-router-dom"
+
 function Tooted() {
   return (
-    <div>Tooted</div>
+    <div>
+      <div>
+          <Link to="/autod">
+              <button>Autod</button>
+          </Link>
+          <Link to="/esindused">
+              <button>Esindused</button>
+          </Link>
+          <Link to="/hinnad">
+              <button>Hinnad</button>
+          </Link>
+          <Link to="/kasutajad">
+              <button>Kasutajad</button>
+          </Link>
+          <Link to="/tootajad">
+              <button>Töötajad</button>
+          </Link>
+          <Link to="/tooted">
+              <button>Tooted</button>
+          </Link>
+      </div><br /><br /><br />
+    </div>
   )
 }
 

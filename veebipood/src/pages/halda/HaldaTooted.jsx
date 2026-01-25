@@ -1,7 +1,30 @@
+import { Link } from "react-router-dom"
+
 function HaldaTooted() {
-  return (
-    <div>HaldaTooted</div>
-  )
+    return (
+        <div>
+            <div>
+                <Link to="/halda-autod">
+                    <button>Halda autosid</button>
+                </Link>
+                <Link to="/halda-esindused">
+                    <button>Halda esindusi</button>
+                </Link>
+                <Link to="/halda-hinnad">
+                    <button>Halda hindu</button>
+                </Link>
+                <Link to="/halda-kasutajad">
+                    <button>Halda kasutajaid</button>
+                </Link>
+                <Link to="/halda-tootajad">
+                    <button>Halda töötajaid</button>
+                </Link>
+                <Link to="/halda-tooted">
+                    <button>Halda tooteid</button>
+                </Link>
+            </div><br /><br /><br /><br />
+        </div>
+    )
 }
 
 export default HaldaTooted
