@@ -1,8 +1,21 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import esindusedFromDb from "../../data/esindused.json"
 
 function Esindused() {
   const [linn, setLinn] = useState('tallinn')
+  const [esindused, setEsindused] = useState(esindusedFromDb.slice());
+
+  const sortNimiAZ = () => {
+    esindused.sort((a, b) => a.nimi.localeCompare(b.nimi));
+    setEsindused(esindused.slice());
+  }
+
+  const sortAadressAZ = () => {
+    esindused.sort((a, b) => a.aadress.localeCompare(b.aadress));
+    setEsindused(esindused.slice());
+  }
+
   return (
     <div>
       <br />
@@ -26,6 +39,8 @@ function Esindused() {
                 <button>Tooted</button>
             </Link>
         </div><br /><br /><br />
+
+
         <div>Hetkel aktiivne linn: {linn}</div>
         <button className={linn === "tallinn" ? "city-active" : undefined} onClick={() => setLinn('tallinn')}>Tallinn</button>
         <button className={linn === "tartu" ? "city-active" : undefined} onClick={() => setLinn('tartu')}>Tartu</button>
@@ -34,12 +49,11 @@ function Esindused() {
 
         {linn === 'tallinn' &&
           <>  
-            <div>Ülemiste</div>
-            <div>Rocca al Mare</div>
-            <div>Magistrali</div>
-            <div>Vesse</div>
-            <div>Kristiine</div>
-            <div>Järveotsa</div>
+            <br /><br />
+            <button onClick={sortNimiAZ}>Sorteeri nimi A-Z</button>
+            <button onClick={sortAadressAZ}>Sorteeri aadress A-Z</button>
+            <br /><br />
+            {esindused.map(esindus => <div key={esindus.aadress}>{esindus.nimi} - {esindus.aadress}</div>)}
           </>
         }
 

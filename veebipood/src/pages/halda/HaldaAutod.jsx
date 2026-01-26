@@ -39,17 +39,23 @@ function HaldaAutod() {
                 <thead>
                     <tr>
                         <th>Jrk nr</th>
-                        <th>Index</th>
-                        <th>Auto nimi</th>
+                        <th>ID</th>
+                        <th>Nimi</th>
+                        <th>Hind</th>
+                        <th>Pilt</th>
+                        <th>Aktiivne</th>
                         <th>Kustuta</th>
                     </tr>
                 </thead>
                 <tbody>
                     {cars.map((car, index) =>
-                        <tr key={car}>
+                        <tr key={car.id}>
                             <td>{index+1}</td>
-                            <td>{index}</td>
-                            <td>{car}</td>
+                            <td>{car.id}</td>
+                            <td>{car.name}</td>
+                            <td>{car.price}</td>
+                            <td>{car.image}</td>
+                            <td>{car.active + 0}</td>
                             <td><button onClick={() => deleteCar(index)}>X</button></td>
                         </tr>
                     )}

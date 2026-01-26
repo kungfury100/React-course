@@ -22,6 +22,7 @@ function Tagasiside() {
         {tagasisided.map((tagasiside, index) =>  
             <table key={tagasiside}>
                 <tr>
+                    <td>{index}</td>
                     <td>{tagasiside}</td>
                     <td><button onClick={() => deleteFeedback(index)}>X</button></td>
                 </tr>

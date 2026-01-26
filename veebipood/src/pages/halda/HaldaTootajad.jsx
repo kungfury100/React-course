@@ -37,7 +37,6 @@ function HaldaTootajad() {
         <thead>
           <tr>
             <th>Jrk nr</th>
-            <th>Index</th>
             <th>Töötaja nimi</th>
             <th>Kustuta</th>
           </tr>
@@ -46,7 +45,6 @@ function HaldaTootajad() {
           {employees.map((employee, index) =>
             <tr key={employee}>
               <td>{index + 1}</td>
-              <td>{index}</td>
               <td>{employee}</td>
               <td><button onClick={() => deleteEmployee(index)}>Delete</button></td>
             </tr>

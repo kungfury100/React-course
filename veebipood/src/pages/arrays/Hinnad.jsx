@@ -11,22 +11,22 @@ function Hinnad() {
     }
 
     const sortAsc = () => {
-      prices.sort((a, b) => a - b);
+      prices.sort((a, b) => a.arv - b.arv);
       setPrices(prices.slice());
     }
 
     const sortDesc = () => {
-      prices.sort((a, b) => b - a);
+      prices.sort((a, b) => b.arv - a.arv);
       setPrices(prices.slice());
     }
 
     const filterLargerThan100 = () => {
-      const result = prices.filter(price => price > 100);
+      const result = prices.filter(price => price.arv > 100);
       setPrices(result);
     }
 
     const filteSmallerThan1000 = () => {
-      const result = prices.filter(price => price < 1000);
+      const result = prices.filter(price => price.arv < 1000);
       setPrices(result);
     }
 
@@ -61,7 +61,7 @@ function Hinnad() {
             <br />
             <button onClick={filterLargerThan100}>Jäta alles suuremad kui 100</button>
             <button onClick={filteSmallerThan1000}>Jäta alles väiksemad kui 1000</button>
-            {prices.map(price => <div key={price}>{price}</div>)}
+            {prices.map(price => <div key={price.arv}>{price.arv}</div>)}
         </div>
     )
 }

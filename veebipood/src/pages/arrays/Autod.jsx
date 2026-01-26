@@ -7,54 +7,64 @@ function Autod() {
     const [cars, setCars] = useState(carsFromDb.slice())
   
   const sortAZ = () => {
-    cars.sort((a, b) => a.localeCompare(b));
+    cars.sort((a, b) => a.name.localeCompare(b.name));
     setCars(cars.slice());
   }
 
   const sortZA = () => {
-    cars.sort((a, b) => b.localeCompare(a));
+    cars.sort((a, b) => b.name.localeCompare(a.name));
     setCars(cars.slice());
   }
 
   const sortLettersAsc = () => {
-    cars.sort((a, b) => a.length - b.length);
+    cars.sort((a, b) => a.name.length - b.name.length);
     setCars(cars.slice());
   }
 
   const sortLettersDesc = () => {
-    cars.sort((a, b) => b.length - a.length);
+    cars.sort((a, b) => b.name.length - a.name.length);
     setCars(cars.slice());
   }
 
   const sortLettersAZ = () => {
-    cars.sort((a, b) => a[2].localeCompare(b[2]));
+    cars.sort((a, b) => a.name[2].localeCompare(b.name[2]));
     // cars.sort((a, b) => a.at(2).localeCompare(b.at(2)));
     // cars.sort((a, b) => a.charAt(2).localeCompare(b.charAt(2)));
     setCars(cars.slice());
   }
 
+  const sortPriceAsc = () => {
+    cars.sort((a, b) => a.price - b.price);
+    setCars(cars.slice());
+  }
+
+  const sortPriceDesc = () => {
+    cars.sort((a, b) => b.price - a.price);
+    setCars(cars.slice());
+  }
+
   const filterByEndsLetterI = () => {
-    const result = cars.filter(car => car.endsWith("i"));
+    const result = cars.filter(car => car.name.endsWith("i"));
     setCars(result);
   }
 
   const filterByLength7 = () => {
-    const result = cars.filter(car => car.length === 7);
+    const result = cars.filter(car => car.name.length === 7);
     setCars(result);
   }
 
   const filterByLengthMoreThan6 = () => {
-    const result = cars.filter(car => car.length >= 6);
+    const result = cars.filter(car => car.name.length >= 6);
     setCars(result);
   }
 
   const filterByIncludesEr = () => {
-    const result = cars.filter(car => car.includes("er"));
+    const result = cars.filter(car => car.name.includes("er"));
     setCars(result);
   }
 
   const filterBySecondLetterO = () => {                // 012
-    const result = cars.filter(car => car[1] === "o"); // Volkswagen
+    const result = cars.filter(car => car.name[1] === "o"); // Volkswagen
     setCars(result);
   }
 
@@ -92,6 +102,8 @@ function Autod() {
       <button onClick={sortLettersAsc}>Sorteeri tähemärgid kasvavalt</button>
       <button onClick={sortLettersDesc}>Sorteeri tähemärgid kahanevalt</button>
       <button onClick={sortLettersAZ}>Sorteeri kolmas täht A-Z</button>
+      <button onClick={sortPriceAsc}>Sorteeri hind kasvavalt</button>
+      <button onClick={sortPriceDesc}>Sorteeri hind kahanevalt</button>
       <br /><br />
       <p className="title">Filtreeri</p>
       <button onClick={filterByEndsLetterI}>Jäta alles i-ga lõppevad</button>
@@ -100,7 +112,7 @@ function Autod() {
       <button onClick={filterByIncludesEr}>Jäta alles er-sisaldavad</button>
       <button onClick={filterBySecondLetterO}>Jäta alles teine täht o</button>
       <br /><br />
-      {cars.map(car => <div key={car}>{car}</div>)}
+      {cars.map(car => <div key={car.id}>{car.name} - {car.price}</div>)}
       <br /><br />
       {cars.length} tk
       <button onClick={reset}>Reset</button>

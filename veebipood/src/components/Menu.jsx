@@ -9,8 +9,8 @@ function Menu() {
         <Link to="/osta-kinkekaart">
             <button>Kinkekaardid</button>
         </Link>
-        <Link to="/lisa-toode">
-            <button>Lisa toode</button>
+        <Link to="/lisa">
+            <button>Lisa</button>
         </Link>
         <Link to="/ostukorv">
             <button>Ostukorv</button>

@@ -1,1 +1,17 @@
-[312, 12, 515, 5, 1, 935, 595, 5357, 855]
+[
+    {"arv": 312, "sonana": "kolmsada kaksteist"},
+    {"arv": 12, "sonana": "kaksteist"},
+    {"arv": 515, "sonana": "viissada viisteist"},
+    {"arv": 5, "sonana": "viis"},
+    {"arv": 1, "sonana": "üks"},
+    {"arv": 935, "sonana": "üheksasada kolmkümmend viis"},
+    {"arv": 595, "sonana": "viissada üheksakümmend viis"},
+    {"arv": 5357, "sonana": "viis tuhat kolmsada viiskümmend seitse"},
+    {"arv": 855, "sonana": "kaheksasada viiskümmend viis"},
+    {"arv": 127, "sonana": "sada kakskümmend seitse"},
+    {"arv": 450, "sonana": "nelisada viiskümmend"},
+    {"arv": 789, "sonana": "seitsesada kaheksakümmend üheksa"},
+    {"arv": 2100, "sonana": "kaks tuhat sada"},
+    {"arv": 3599, "sonana": "kolm tuhat viissada üheksakümmend üheksa"},
+    {"arv": 1250, "sonana": "tuhat kaksssada viiskümmend"}
+]

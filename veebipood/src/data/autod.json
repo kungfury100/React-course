@@ -1,1 +1,12 @@
-["Mercedes", "Ferrari", "Audi", "Toyota", "Honda", "BMW", "Jaguar", "Hyundai"]
+[
+    {"id": 12, "name": "Mercedes", "price": 125000, "image": "", "active": true},
+    {"id": 65, "name": "Ferrari", "price": 250000, "image": "", "active": true},
+    {"id": 22, "name": "Audi", "price": 95000, "image": "", "active": false},
+    {"id": 54, "name": "Toyota", "price": 45000, "image": "", "active": true},
+    {"id": 61, "name": "Honda", "price": 50000, "image": "", "active": true},
+    {"id": 66, "name": "BMW", "price": 110000, "image": "", "active": false},
+    {"id": 77, "name": "Jaguar", "price": 150000, "image": "", "active": true},
+    {"id": 89, "name": "Hyundai", "price": 35000, "image": "", "active": false},
+    {"id": 90, "name": "Volkswagen", "price": 55000, "image": "", "active": true},
+    {"id": 10, "name": "Mazda", "price": 40000, "image": "", "active": false}
+]
