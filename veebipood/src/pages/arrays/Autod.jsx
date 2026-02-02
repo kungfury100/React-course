@@ -112,7 +112,13 @@ function Autod() {
       <button onClick={filterByIncludesEr}>Jäta alles er-sisaldavad</button>
       <button onClick={filterBySecondLetterO}>Jäta alles teine täht o</button>
       <br /><br />
-      {cars.map(car => <div key={car.id}>{car.name} - {car.price}</div>)}
+      {cars.map(car => 
+        <div key={car.id}>
+          {car.name} - {car.price}
+          <Link to={"/auto/" + car.id}>
+            <button>Vt lähemalt</button>
+          </Link>
+        </div>)}
       <br /><br />
       {cars.length} tk
       <button onClick={reset}>Reset</button>

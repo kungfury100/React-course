@@ -85,15 +85,15 @@ function App() {
           <Route path="/lisa-tootaja" element={ <LisaTootaja/> } />
           <Route path="/lisa-toode" element={ <LisaToode/> } />
 
-          <Route path="/muuda-auto" element={ <MuudaAuto/> } />
-          <Route path="/muuda-esindus" element={ <MuudaEsindus/> } />
+          <Route path="/muuda-auto/:auto_id" element={ <MuudaAuto/> } />
+          <Route path="/muuda-esindus/:esindus_nimi" element={ <MuudaEsindus/> } />
           <Route path="/muuda-hind" element={ <MuudaHind/> } />
           <Route path="/muuda-kasutaja" element={ <MuudaKasutaja/> } />
           <Route path="/muuda-tootaja" element={ <MuudaTootaja/> } />
           <Route path="/muuda-toode" element={ <MuudaToode/> } />
 
-          <Route path="/auto" element={ <YksAuto/> } />
-          <Route path="/esindus" element={ <YksEsindus/> } />
+          <Route path="/auto/:auto_id" element={ <YksAuto/> } />
+          <Route path="/esindused/:esindus_nimi" element={ <YksEsindus/> } />
           <Route path="/hind" element={ <YksHind/> } />
           <Route path="/kasutaja" element={ <YksKasutaja/> } />
           <Route path="/tootaja" element={ <YksTootaja/> } />

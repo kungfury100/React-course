@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import esindusedFromDb from "../../data/esindused.json"
+import { convertHtmlVariable } from "../../util/convertings";
 
 function Esindused() {
   const [linn, setLinn] = useState('tallinn')
@@ -53,7 +54,12 @@ function Esindused() {
             <button onClick={sortNimiAZ}>Sorteeri nimi A-Z</button>
             <button onClick={sortAadressAZ}>Sorteeri aadress A-Z</button>
             <br /><br />
-            {esindused.map(esindus => <div key={esindus.aadress}>{esindus.nimi} - {esindus.aadress}</div>)}
+            {esindused.map(esindus => 
+              <div key={esindus.aadress}>
+                {esindus.nimi} - {esindus.aadress} 
+                <Link to={"/esindused/" + convertHtmlVariable(esindus.nimi)}>
+                  <button>Vt lähemalt</button>
+                </Link></div>)}
           </>
         }
 

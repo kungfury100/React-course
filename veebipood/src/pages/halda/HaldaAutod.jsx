@@ -57,6 +57,11 @@ function HaldaAutod() {
                             <td>{car.image}</td>
                             <td>{car.active + 0}</td>
                             <td><button onClick={() => deleteCar(index)}>X</button></td>
+                            <td>
+                                <Link to={"/muuda-auto/" + car.id}>
+                                    <button>Muuda auto</button>
+                                </Link>
+                            </td>
                         </tr>
                     )}
                 </tbody>
