@@ -6,52 +6,52 @@ function Tooted() {
   const [products, setProducts] = useState(productsFromDb.slice())
 
   const sortAZ = () => {
-    products.sort((a, b) => a.localeCompare(b));
+    products.sort((a, b) => a.name.localeCompare(b));
     setProducts(products.slice());
   }
 
   const sortZA = () => {
-    products.sort((a, b) => b.localeCompare(a));
+    products.sort((a, b) => b.name.localeCompare(a));
     setProducts(products.slice());
   }
 
   const sortLettersAsc = () => {
-    products.sort((a, b) => a.length - b.length);
+    products.sort((a, b) => a.name.length - b.name.length);
     setProducts(products.slice());
   }
 
   const sortLettersDesc = () => {
-    products.sort((a, b) => b.length - a.length);
+    products.sort((a, b) => b.name.length - a.name.length);
     setProducts(products.slice());
   }
 
   const sortSecondLetterAZ = () => {
-    products.sort((a, b) => a[1].localeCompare(b[1], 'et'));
+    products.sort((a, b) => a.name[1].localeCompare(b.name[1], 'et'));
     setProducts(products.slice());
   }
 
   const filterUpTo6Characters = () => {
-    const result = products.filter(product => product.length <= 6);
+    const result = products.filter(product => product.name.length <= 6);
     setProducts(result);
   }
 
   const filterExactly6Characters = () => {
-    const result = products.filter(product => product.length === 6);
+    const result = products.filter(product => product.name.length === 6);
     setProducts(result);
   }
 
   const filterEndsWithA = () => {
-    const result = products.filter(product => product[product.length - 1] === "a");
+    const result = products.filter(product => product.name[product.name.length - 1] === "a");
     setProducts(result);
   }
 
   const filterEndsWithY = () => {
-    const result = products.filter(product => product[product.length - 1] === "y");
+    const result = products.filter(product => product.name[product.name.length - 1] === "y");
     setProducts(result);
   }
 
   const filterEvenCharacters = () => {
-    const result = products.filter(product => product.length % 2 === 0);
+    const result = products.filter(product => product.name.length % 2 === 0);
     setProducts(result);
   }
 
@@ -96,7 +96,7 @@ function Tooted() {
       <button onClick={filterEndsWithY}>Lõppeb "y" tähega</button>
       <button onClick={filterEvenCharacters}>Paarisarv tähti</button>
       <br /><br />
-      {products.map(product => <div key={product}>{product}</div>)}
+      {products.map(product => <div key={product.id}>{product.name}</div>)}
       <br />
       {products.length} tk
       <br />

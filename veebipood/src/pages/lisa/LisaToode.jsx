@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+// {id: "", "name": "", "price": "", "image": "", "active": ""}
 
 function LisaToode() {
   const [message, setMessage] = useState('Lisa toode')

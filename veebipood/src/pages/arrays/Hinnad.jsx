@@ -21,12 +21,23 @@ function Hinnad() {
     }
 
     const filterLargerThan100 = () => {
-      const result = prices.filter(price => price.arv > 100);
+      const result = pricesFromDb.filter(price => price.arv > 100);
       setPrices(result);
     }
 
     const filteSmallerThan1000 = () => {
-      const result = prices.filter(price => price.arv < 1000);
+      const result = pricesFromDb.filter(price => price.arv < 1000);
+      setPrices(result);
+    }
+
+    const arvutaKokku = () => {
+      let summa = 0;
+      prices.forEach(price => summa = summa + price.arv);
+      return summa;
+    }
+
+    const otsi = (searchedValue) => {
+      const result = pricesFromDb.filter(price => price.sonana.includes(searchedValue));
       setPrices(result);
     }
 
@@ -53,6 +64,8 @@ function Hinnad() {
                   <button>Tooted</button>
               </Link>
             </div><br /><br /><br />
+            <label htmlFor="">Otsi </label>
+            <input onChange={(e) => otsi(e.target.value)} type="text" />
             <div>Hindu kokku: {prices.length} tk</div>
             <button onClick={reset}>Reset</button>
             <br />
@@ -61,7 +74,8 @@ function Hinnad() {
             <br />
             <button onClick={filterLargerThan100}>Jäta alles suuremad kui 100</button>
             <button onClick={filteSmallerThan1000}>Jäta alles väiksemad kui 1000</button>
-            {prices.map(price => <div key={price.arv}>{price.arv}</div>)}
+            {prices.map(price => <div key={price.arv}>{price.arv} - {price.sonana}</div>)}
+            <div>Kõik hinnad kokku: {arvutaKokku()}</div>
         </div>
     )
 }

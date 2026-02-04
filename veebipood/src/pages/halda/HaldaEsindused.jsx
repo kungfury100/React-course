@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import esindusedFromDb from "../../data/esindused.json"
+import { convertHtmlVariable } from "../../util/convertings"
 
 
 function HaldaEsindused() {
@@ -55,6 +56,11 @@ function HaldaEsindused() {
                             <td>{esindus.aadress}</td>
                             <td>{esindus.telefon}</td>
                             <td><button onClick={() => deleteEsindus(index)}>X</button></td>
+                            <td>
+                                <Link to={"/muuda-esindus/" + convertHtmlVariable(esindus.nimi)}>
+                                    <button>Muuda esindus</button>
+                                </Link>
+                            </td>
                         </tr>
                     )}
                 </tbody>

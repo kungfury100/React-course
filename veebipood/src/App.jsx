@@ -1,4 +1,5 @@
 // import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 import { Link, Route, Routes } from 'react-router-dom'
 import Avaleht from './pages/Avaleht'
@@ -41,14 +42,27 @@ import YksHind from './pages/yks/YksHind'
 import YksKasutaja from './pages/yks/YksKasutaja'
 import YksTootaja from './pages/yks/YksTootaja'
 import YksToode from './pages/yks/YksToode'
+import Jook from './pages/Jook'
+import Meist from './pages/Meist'
+import { useState } from 'react'
 
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const { t, i18n } = useTranslation();
+  const [darkTheme, setDarkTheme] = useState(localStorage.getItem("isDarkTheme") === "true");
+
+  const handleDarkTheme = (newTheme) => {
+    setDarkTheme(newTheme);
+    localStorage.setItem("isDarkTheme", newTheme);
+  }
 
   return (
-    <>
+    <div className={darkTheme ? "dark-theme" : "light-theme"}>
       <Menu />
+      <button onClick={() => handleDarkTheme(false)}>{t('menu.lighttheme')}</button>
+      <button onClick={() => handleDarkTheme(true)}>{t('menu.darktheme')}</button>
+
+
       {/* Routes ülesse käib Menüü */}
       {/* localhost:5173/lisa-toode -> LisaToode.jsx sisu kätte */}
 
@@ -60,6 +74,7 @@ function App() {
           <Route path="/osta-kinkekaart" element={<Kinkekaardid/>} />
           <Route path="/seaded" element={<Seaded/>} />
           <Route path="/kalkulaator" element={<Kalkulaator/>} />
+           <Route path="/meist" element={<Meist/>} />
           
           <Route path="/arrays" element={ <ArraysHome/> } />
           <Route path="/autod" element={ <Autod/> } />
@@ -99,11 +114,15 @@ function App() {
           <Route path="/tootaja" element={ <YksTootaja/> } />
           <Route path="/toode" element={ <YksToode/> } />
 
+          <Route path="/jook/:number" element={<Jook/>} />
+
           <Route path="/*" element={<NotFound/>} />
       </Routes>
       {/* Routes alla käib FOOTER */}
-    </>
+    </div>
   )
 }
 
 export default App
+
+

@@ -1,1 +1,52 @@
-["Takeshi Yamamoto", "Sakura", "Haruto Nakamura Tanaka", "Yui Sato", "Kaito", "Hina Watanabe", "Riku Ito Kobayashi", "Aoi", "Sora Kimura", "Mei Hayashi Suzuki Yamada"]
+[
+	{
+		"Name": "Takeshi Yamamoto",
+		"Occupation": "Store Manager",
+		"Telephone": "5512 4301"
+	},
+	{
+		"Name": "Sakura",
+		"Occupation": "Cashier",
+		"Telephone": "5523 8840"
+	},
+	{
+		"Name": "Haruto Nakamura Tanaka",
+		"Occupation": "Sales Associate",
+		"Telephone": "5534 1297"
+	},
+	{
+		"Name": "Yui Sato",
+		"Occupation": "Inventory Specialist",
+		"Telephone": "5545 7712"
+	},
+	{
+		"Name": "Kaito",
+		"Occupation": "Customer Support",
+		"Telephone": "5556 3489"
+	},
+	{
+		"Name": "Hina Watanabe",
+		"Occupation": "Marketing Coordinator",
+		"Telephone": "5567 2054"
+	},
+	{
+		"Name": "Riku Ito Kobayashi",
+		"Occupation": "Warehouse Operative",
+		"Telephone": "5578 9631"
+	},
+	{
+		"Name": "Aoi",
+		"Occupation": "Barista",
+		"Telephone": "5589 4176"
+	},
+	{
+		"Name": "Sora Kimura",
+		"Occupation": "Delivery Driver",
+		"Telephone": "5590 5823"
+	},
+	{
+		"Name": "Mei Hayashi Suzuki Yamada",
+		"Occupation": "Accountant",
+		"Telephone": "5601 7348"
+	}
+]

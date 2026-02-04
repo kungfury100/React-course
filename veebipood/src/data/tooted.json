@@ -1,1 +1,12 @@
-["Coca-cola", "Fanta", "Sprite", "Vichy", "Red Bull", "Aura", "Monster Energy", "Dr Pepper", "Värska Originaal", "Pepsi"]
+[
+  {"id": "1", "name": "Coca-cola", "price": "", "image": "", "active": ""},
+  {"id": "2", "name": "Fanta", "price": "", "image": "", "active": ""},
+  {"id": "3", "name": "Sprite", "price": "", "image": "", "active": ""},
+  {"id": "4", "name": "Vichy", "price": "", "image": "", "active": ""},
+  {"id": "5", "name": "Red Bull", "price": "", "image": "", "active": ""},
+  {"id": "6", "name": "Aura", "price": "", "image": "", "active": ""},
+  {"id": "7", "name": "Monster Energy", "price": "", "image": "", "active": ""},
+  {"id": "8", "name": "Dr Pepper", "price": "", "image": "", "active": ""},
+  {"id": "9", "name": "Värska Originaal", "price": "", "image": "", "active": ""},
+  {"id": "10", "name": "Pepsi", "price": "", "image": "", "active": ""}
+]

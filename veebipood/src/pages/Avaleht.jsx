@@ -1,7 +1,9 @@
 // rfce
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import laigitud from "../assets/heart.svg"
 import mittelaigitud from "../assets/heart-crack.svg"
+import joogidFromDb from "../data/joogid.json"
 
 function Avaleht() {
   const [amount, setAmount] = useState(0);
@@ -44,6 +46,16 @@ function Avaleht() {
         {products.map(product => <div key={product}>{product}</div>)}
       </div>
       <button onClick={() => setProducts(["Coca-cola", "Fanta", "Sprite", "Red Bull"])}>Lisa Red Bull</button>
+      <br /><br /><br />
+
+      <h3>Joogid:</h3>
+        {joogidFromDb.map((jook, index) => 
+          <div key={index}>
+            <Link to={`/jook/${index}`}>
+              {jook.name}
+            </Link>
+          </div>
+        )}
     </div>
   )
 }

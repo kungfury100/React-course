@@ -7,32 +7,32 @@ function Tootajad() {
   const [employees, setEmployees] = useState(employeesFromDb.slice())
 
   const sortAZ = () => {
-    employees.sort((a, b) => a.localeCompare(b));
+    employees.sort((a, b) => a.Name.localeCompare(b.Name));
     setEmployees(employees.slice());
   }
 
   const sortZA = () => {
-    employees.sort((a, b) => b.localeCompare(a));
+    employees.sort((a, b) => b.Name.localeCompare(a.Name));
     setEmployees(employees.slice());
   }
 
   const sortLettersAsc = () => {
-    employees.sort((a, b) => a.length - b.length);
+    employees.sort((a, b) => a.Name.length - b.Name.length);
     setEmployees(employees.slice());
   }
 
   const sortLettersDesc = () => {
-    employees.sort((a, b) => b.length - a.length);
+    employees.sort((a, b) => b.Name.length - a.Name.length);
     setEmployees(employees.slice());
   }
 
   const sortLettersAZ = () => {
-    employees.sort((a, b) => a[1].localeCompare(b[1]));
+    employees.sort((a, b) => a.Name[1].localeCompare(b.Name[1]));
     setEmployees(employees.slice());
   }
 
   const sortLettersLength = () => {
-    employees.sort((a, b) => a.split(" ").length - b.split(" ").length);
+    employees.sort((a, b) => a.Name.split(" ").length - b.Name.split(" ").length);
     setEmployees(employees.slice());
   }
 
@@ -41,52 +41,52 @@ function Tootajad() {
   }
 
   const filterByLength3 = () => {
-    const result = employees.filter(employee => employee.length === 3);
+    const result = employees.filter(employee => employee.Name.length === 3);
     setEmployees(result);
   }
   
   const filterByLengthMoreThan5 = () => {
-    const result = employees.filter(employee => employee.length >= 6);
+    const result = employees.filter(employee => employee.Name.length >= 6);
     setEmployees(result);
   }
 
   const filterByNameContainsAi = () => {
-    const result = employees.filter(employee => employee.includes("ai"));
+    const result = employees.filter(employee => employee.Name.includes("ai"));
     setEmployees(result);
   }
 
   const filterBySecondLetterI = () => {
-    const result = employees.filter(employee => employee[1] === "i");
+    const result = employees.filter(employee => employee.Name[1] === "i");
     setEmployees(result);
   }
 
   const filterByStartsWithM = () => {
-    const result = employees.filter(employee => employee[0] === "M");
+    const result = employees.filter(employee => employee.Name[0] === "M");
     setEmployees(result);
   }
 
   const filterByEqualCharacters = () => {
-    const result = employees.filter(employee => employee.length % 2 === 0);
+    const result = employees.filter(employee => employee.Name.length % 2 === 0);
     setEmployees(result);
   }
 
   const filterByOddCharacters = () => {
-    const result = employees.filter(employee => employee.length % 2 !== 0);
+    const result = employees.filter(employee => employee.Name.length % 2 !== 0);
     setEmployees(result);
   }
 
   const filterByEndsWithA = () => {
-    const result = employees.filter(employee => employee[employee.length - 1] === "a");
+    const result = employees.filter(employee => employee.Name[employee.Name.length - 1] === "a");
     setEmployees(result);
   }
 
   const filterByAtLeast10Characters = () => {
-    const result = employees.filter(employee => employee.length >= 10);
+    const result = employees.filter(employee => employee.Name.length >= 10);
     setEmployees(result);
   }
 
   const filterByExactly15Characters = () => {
-    const result = employees.filter(employee => employee.length === 15);
+    const result = employees.filter(employee => employee.Name.length === 15);
     setEmployees(result);
   }
 
@@ -132,7 +132,7 @@ function Tootajad() {
       <button onClick={filterByAtLeast10Characters}>Vähemalt 10 tähte</button>
       <button onClick={filterByExactly15Characters}>Täpselt 15 tähte</button>
       <br /><br />
-      {employees.map(employee => <div key={employee}>{employee}</div>)} <br />
+      {employees.map((employee, index) => <div key={index}>{employee.Name}</div>)} <br />
       {employees.length} tk
       <button onClick={reset}>Reset</button>
     </div>

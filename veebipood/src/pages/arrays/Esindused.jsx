@@ -17,6 +17,17 @@ function Esindused() {
     setEsindused(esindused.slice());
   }
 
+  const arvutaKokku = () => {
+    let summa = 0;
+    esindused.forEach(esindus => summa = summa + esindus.nimi.length + esindus.aadress.length);
+    return summa;
+  }
+
+  const otsi = (searchedValue) => {
+    const result = esindusedFromDb.filter(esindus => esindus.aadress.includes(searchedValue));
+    setEsindused(result);
+  }
+
   return (
     <div>
       <br />
@@ -51,6 +62,9 @@ function Esindused() {
         {linn === 'tallinn' &&
           <>  
             <br /><br />
+            <label htmlFor="">Otsi </label>
+            <input onChange={(e) => otsi(e.target.value)} type="text" />
+            <br /><br />
             <button onClick={sortNimiAZ}>Sorteeri nimi A-Z</button>
             <button onClick={sortAadressAZ}>Sorteeri aadress A-Z</button>
             <br /><br />
@@ -60,6 +74,7 @@ function Esindused() {
                 <Link to={"/esindused/" + convertHtmlVariable(esindus.nimi)}>
                   <button>Vt lähemalt</button>
                 </Link></div>)}
+            <div>Tähemärgid kokku: {arvutaKokku()}</div>
           </>
         }
 

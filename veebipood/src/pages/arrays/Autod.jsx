@@ -44,27 +44,27 @@ function Autod() {
   }
 
   const filterByEndsLetterI = () => {
-    const result = cars.filter(car => car.name.endsWith("i"));
+    const result = carsFromDb.filter(car => car.name.endsWith("i"));
     setCars(result);
   }
 
   const filterByLength7 = () => {
-    const result = cars.filter(car => car.name.length === 7);
+    const result = carsFromDb.filter(car => car.name.length === 7);
     setCars(result);
   }
 
   const filterByLengthMoreThan6 = () => {
-    const result = cars.filter(car => car.name.length >= 6);
+    const result = carsFromDb.filter(car => car.name.length >= 6);
     setCars(result);
   }
 
   const filterByIncludesEr = () => {
-    const result = cars.filter(car => car.name.includes("er"));
+    const result = carsFromDb.filter(car => car.name.includes("er"));
     setCars(result);
   }
 
   const filterBySecondLetterO = () => {                // 012
-    const result = cars.filter(car => car.name[1] === "o"); // Volkswagen
+    const result = carsFromDb.filter(car => car.name[1] === "o"); // Volkswagen
     setCars(result);
   }
 
@@ -72,6 +72,22 @@ function Autod() {
     setCars(carsFromDb.slice());
   }
 
+  const addToCart = (product) => {
+    const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
+    cartLS.push(product);
+    localStorage.setItem("cart", JSON.stringify(cartLS));
+  }
+
+  const arvutaKokku = () => {
+    let summa = 0;
+    cars.forEach(car => summa = summa + car.price);
+    return summa;
+  }
+
+  const otsi = (searchedValue) => {
+    const result = carsFromDb.filter(car => car.name.toLowerCase().includes(searchedValue.toLowerCase()));
+    setCars(result);
+  }
 
   return (
     <div>
@@ -96,6 +112,8 @@ function Autod() {
               <button>Tooted</button>
           </Link>
       </div><br /><br /><br />
+      <label htmlFor="">Otsi </label>
+      <input onChange={(e) => otsi(e.target.value)} type="text" />
       <p className="title">Sorteeri</p>
       <button onClick={sortAZ}>Sorteeri A-Z</button>
       <button onClick={sortZA}>Sorteeri Z-A</button>
@@ -118,10 +136,13 @@ function Autod() {
           <Link to={"/auto/" + car.id}>
             <button>Vt lähemalt</button>
           </Link>
+          <button onClick={() => addToCart(car)}>Lisa ostukorvi</button>
         </div>)}
       <br /><br />
       {cars.length} tk
       <button onClick={reset}>Reset</button>
+      <br /><br />
+      <div>Kõikide autode hinnad kokku: {arvutaKokku()} €</div>
     </div>
   )
 }
