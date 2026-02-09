@@ -45,6 +45,15 @@ import YksToode from './pages/yks/YksToode'
 import Jook from './pages/Jook'
 import Meist from './pages/Meist'
 import { useState } from 'react'
+import ApiHome from './pages/api/ApiHome'
+import Cars from './pages/api/Cars'
+import Countries from './pages/api/Countries'
+import Floods from './pages/api/Floods'
+import Supplier1 from './pages/api/Supplier1'
+import Supplier2 from './pages/api/Supplier2'
+import Supplier3 from './pages/api/Supplier3'
+import Vocabulary from './pages/api/Vocabulary'
+import Books from './pages/api/Books'
 
 
 function App() {
@@ -113,6 +122,17 @@ function App() {
           <Route path="/kasutaja/:kasutaja_username" element={ <YksKasutaja/> } />
           <Route path="/tootaja/:tootaja_nimi" element={ <YksTootaja/> } />
           <Route path="/toode/:toode_id" element={ <YksToode/> } />
+
+          <Route path="/api" element={ <ApiHome/> } />
+          <Route path="/books" element={ <Books/> } />
+          <Route path="/cars" element={ <Cars/> } />
+          <Route path="/countries" element={ <Countries/> } />
+          <Route path="/floods" element={ <Floods/> } />
+          <Route path="/supplier1" element={ <Supplier1/> } />
+          <Route path="/supplier2" element={ <Supplier2/> } />
+          <Route path="/supplier3" element={ <Supplier3/> } />
+          <Route path="/vocabulary" element={ <Vocabulary/> } />
+          
 
           <Route path="/jook/:number" element={<Jook/>} />
 

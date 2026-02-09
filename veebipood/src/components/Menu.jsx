@@ -47,6 +47,10 @@ function Menu() {
             <button>{t('menu.about')}</button>
         </Link>
 
+        <Link to="/api">
+            <button>{t('menu.api')}</button>
+        </Link>
+
         {/* <button onClick={() => handleLanguageChange("en")}>English</button>
         <button onClick={() => handleLanguageChange("et")}>Eesti</button> */}
 
