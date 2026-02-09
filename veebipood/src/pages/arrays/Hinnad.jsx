@@ -74,7 +74,13 @@ function Hinnad() {
             <br />
             <button onClick={filterLargerThan100}>Jäta alles suuremad kui 100</button>
             <button onClick={filteSmallerThan1000}>Jäta alles väiksemad kui 1000</button>
-            {prices.map(price => <div key={price.arv}>{price.arv} - {price.sonana}</div>)}
+            {prices.map(price => 
+              <div key={price.arv}>
+                {price.arv} - {price.sonana}
+                <Link to={"/hind/" + price.arv}>
+                  <button>Vt lähemalt</button>
+                </Link>
+              </div>)}
             <div>Kõik hinnad kokku: {arvutaKokku()}</div>
         </div>
     )

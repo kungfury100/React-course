@@ -1,0 +1,62 @@
+[
+	{
+		"Username": "liam.parker",
+		"Email": "liam.parker@example.com",
+		"Password": "Skyline#72",
+		"Age": 29
+	},
+	{
+		"Username": "ava.mitchell",
+		"Email": "ava.mitchell@example.com",
+		"Password": "Velvet!41",
+		"Age": 24
+	},
+	{
+		"Username": "noah.bennett",
+		"Email": "noah.bennett@example.com",
+		"Password": "River@58",
+		"Age": 33
+	},
+	{
+		"Username": "sophia.reed",
+		"Email": "sophia.reed@example.com",
+		"Password": "Amber*96",
+		"Age": 27
+	},
+	{
+		"Username": "elijah.carter",
+		"Email": "elijah.carter@example.com",
+		"Password": "Nova-15",
+		"Age": 31
+	},
+	{
+		"Username": "mia.collins",
+		"Email": "mia.collins@example.com",
+		"Password": "Luna_83",
+		"Age": 22
+	},
+	{
+		"Username": "james.foster",
+		"Email": "james.foster@example.com",
+		"Password": "Cobalt#64",
+		"Age": 36
+	},
+	{
+		"Username": "charlotte.hayes",
+		"Email": "charlotte.hayes@example.com",
+		"Password": "Maple!27",
+		"Age": 28
+	},
+	{
+		"Username": "lucas.morgan",
+		"Email": "lucas.morgan@example.com",
+		"Password": "Orion@09",
+		"Age": 41
+	},
+	{
+		"Username": "amelia.brooks",
+		"Email": "amelia.brooks@example.com",
+		"Password": "Sunny*52",
+		"Age": 26
+	}
+]

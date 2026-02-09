@@ -96,7 +96,21 @@ function Tooted() {
       <button onClick={filterEndsWithY}>Lõppeb "y" tähega</button>
       <button onClick={filterEvenCharacters}>Paarisarv tähti</button>
       <br /><br />
-      {products.map(product => <div key={product.id}>{product.name}</div>)}
+      {products.map(product =>
+        <div key={product.id}>
+          {product.name}
+          <br />
+          Hind: {product.price}
+          <br />
+          Aktiivne: {product.active + 0}
+          <br />
+          <img src={product.image} alt={product.name} width="150" />
+          <br />
+          <Link to={"/toode/" + product.id}>
+            <button>Vt lähemalt</button>
+          </Link>
+        </div>
+      )}
       <br />
       {products.length} tk
       <br />

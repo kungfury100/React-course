@@ -73,7 +73,9 @@ function Esindused() {
                 {esindus.nimi} - {esindus.aadress} 
                 <Link to={"/esindused/" + convertHtmlVariable(esindus.nimi)}>
                   <button>Vt lähemalt</button>
-                </Link></div>)}
+                </Link>
+              </div>
+            )}
             <div>Tähemärgid kokku: {arvutaKokku()}</div>
           </>
         }

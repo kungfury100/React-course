@@ -37,17 +37,30 @@ function HaldaTooted() {
               <tr>
                 <th>Jrk nr</th>
                 <th>Index</th>
+                <th>ID</th>
                 <th>Toote nimi</th>
+                <th>Hind</th>
+                <th>Pilt</th>
+                <th>Aktiivne</th>
                 <th>Kustuta</th>
               </tr>
             </thead>
             <tbody>
               {products.map((product, index) =>
-                <tr key={product}>
+                <tr key={product.id}>
                   <td>{index + 1}</td>
                   <td>{index}</td>
-                  <td>{product}</td>
+                  <td>{product.id}</td>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.image}</td>
+                  <td>{product.active + 0}</td>
                   <td><button onClick={() => deleteProduct(index)}>Delete</button></td>
+                  <td>
+                    <Link to={"/muuda-toode/" + product.id}>
+                      <button>Muuda toodet</button>
+                    </Link>
+                  </td>
                 </tr>
               )}
             </tbody>

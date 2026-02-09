@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import employeesFromDb from "../../data/tootajad.json"
+import { convertHtmlVariable } from "../../util/convertings"
 
 
 function Tootajad() {
@@ -132,7 +133,19 @@ function Tootajad() {
       <button onClick={filterByAtLeast10Characters}>Vähemalt 10 tähte</button>
       <button onClick={filterByExactly15Characters}>Täpselt 15 tähte</button>
       <br /><br />
-      {employees.map((employee, index) => <div key={index}>{employee.Name}</div>)} <br />
+
+      {employees.map((employee, index) => 
+        <div key={index}>
+          {employee.Name} <br />{employee.Occupation} <br /> {employee.Telephone} <br />
+          <Link to={"/tootaja/" + convertHtmlVariable(employee.Name)}>
+            <button>Vt lähemalt</button>
+          </Link>
+          <br /><br />
+        </div>
+      )} 
+      
+      <br />
+
       {employees.length} tk
       <button onClick={reset}>Reset</button>
     </div>

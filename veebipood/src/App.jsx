@@ -102,17 +102,17 @@ function App() {
 
           <Route path="/muuda-auto/:auto_id" element={ <MuudaAuto/> } />
           <Route path="/muuda-esindus/:esindus_nimi" element={ <MuudaEsindus/> } />
-          <Route path="/muuda-hind" element={ <MuudaHind/> } />
-          <Route path="/muuda-kasutaja" element={ <MuudaKasutaja/> } />
-          <Route path="/muuda-tootaja" element={ <MuudaTootaja/> } />
-          <Route path="/muuda-toode" element={ <MuudaToode/> } />
+          <Route path="/muuda-hind/:hind_arv" element={ <MuudaHind/> } />
+          <Route path="/muuda-kasutaja/:kasutaja_username" element={ <MuudaKasutaja/> } />
+          <Route path="/muuda-tootaja/:tootaja_nimi" element={ <MuudaTootaja/> } />
+          <Route path="/muuda-toode/:toode_id" element={ <MuudaToode/> } />
 
           <Route path="/auto/:auto_id" element={ <YksAuto/> } />
           <Route path="/esindused/:esindus_nimi" element={ <YksEsindus/> } />
-          <Route path="/hind" element={ <YksHind/> } />
-          <Route path="/kasutaja" element={ <YksKasutaja/> } />
-          <Route path="/tootaja" element={ <YksTootaja/> } />
-          <Route path="/toode" element={ <YksToode/> } />
+          <Route path="/hind/:hind_arv" element={ <YksHind/> } />
+          <Route path="/kasutaja/:kasutaja_username" element={ <YksKasutaja/> } />
+          <Route path="/tootaja/:tootaja_nimi" element={ <YksTootaja/> } />
+          <Route path="/toode/:toode_id" element={ <YksToode/> } />
 
           <Route path="/jook/:number" element={<Jook/>} />
 

@@ -51,6 +51,11 @@ function HaldaHinnad() {
               <td>{price.arv}</td>
               <td>{price.sonana}</td>
               <td><button onClick={() => deletePrice(index)}>Delete</button></td>
+              <td>
+                <Link to={"/muuda-hind/" + price.arv}>
+                  <button>Muuda hind</button>
+                </Link>
+              </td>
             </tr>
           )}
         </tbody>
