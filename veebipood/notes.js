@@ -6,8 +6,8 @@
 //6. E 02.02 - useParams(), muutmine
 //7. K 04.02 - darkmode/lightmode. keel. localStorage. ostukorv. localStorage array
 //8. E 09.02 - API päringud. 
-//9. K 11.02 - emaili saatmine. kaardirakendus. makse. CSS library. KOJU: uus inglise keelne veebipood.
-//10.E 16.02 - uue inglise keelse poe koos edasi tegemine
+//9. K 11.02 - emaili saatmine. kaardirakendus. CSS library (Bootstrap, MUI, Tailwind). KOJU: uus inglise keelne veebipood.
+//10.E 16.02 - uue inglise keelse poe koos edasi tegemine. andmebaas.
 //11.K 18.02
 //12.E 23.02
 //13.K 25.02

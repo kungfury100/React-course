@@ -9,13 +9,15 @@ const resources = {
     translation: {
       "menu": {
           "giftcards": "Giftcards",
-          "add": "Add",
           "cart": "Cart",
           "settings": "Settings",
           "calculator": "Calculator",
           "arrays": "Arrays",
           "manage": "Manage",
+          "add": "Add",
+          "api": "API",
           "about": "About",
+          "map": "Map",
           "darktheme": "Dark",
           "lighttheme": "Light"
       }
@@ -32,7 +34,9 @@ const resources = {
           "calculator": "Kalkulaator",
           "arrays": "Arrays",
           "manage": "Halda",
+          "api": "API",
           "about": "Meist",
+          "map": "Kaardirakendus",
           "darktheme": "Öö",
           "lighttheme": "Päev"
         }

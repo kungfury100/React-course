@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import laigitud from "../assets/heart.svg"
 import mittelaigitud from "../assets/heart-crack.svg"
 import joogidFromDb from "../data/joogid.json"
+import CarouselGallery from "../components/CarouselGallery";
+import { Button as BtButton } from "react-bootstrap";
+import Stack from '@mui/material/Stack';
+import { Button as MuiButton } from "@mui/material";
+
 
 function Avaleht() {
   const [amount, setAmount] = useState(0);
@@ -29,6 +34,12 @@ function Avaleht() {
 
   return (
     <div>
+      <MuiButton variant="contained">Contained</MuiButton>
+
+      <BtButton>Button</BtButton>
+
+      <CarouselGallery />
+
       {liked && <img onClick={() => setLiked(false)} src={laigitud} alt="" />}
       {!liked && <img onClick={() => setLiked(true)} src={mittelaigitud} alt="" />}
         

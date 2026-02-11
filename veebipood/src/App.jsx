@@ -54,6 +54,7 @@ import Supplier2 from './pages/api/Supplier2'
 import Supplier3 from './pages/api/Supplier3'
 import Vocabulary from './pages/api/Vocabulary'
 import Books from './pages/api/Books'
+import Kaardirakendus from './pages/Kaardirakendus'
 
 
 function App() {
@@ -83,7 +84,8 @@ function App() {
           <Route path="/osta-kinkekaart" element={<Kinkekaardid/>} />
           <Route path="/seaded" element={<Seaded/>} />
           <Route path="/kalkulaator" element={<Kalkulaator/>} />
-           <Route path="/meist" element={<Meist/>} />
+          <Route path="/meist" element={<Meist/>} />
+          <Route path="/kaardirakendus" element={<Kaardirakendus/>} />
           
           <Route path="/arrays" element={ <ArraysHome/> } />
           <Route path="/autod" element={ <Autod/> } />

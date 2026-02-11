@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import autodFromDb from "../../data/autod.json"
 import { ToastContainer, toast } from 'react-toastify';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Checkbox from '@mui/material/Checkbox';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
 
 function LisaAuto() {
 
@@ -26,28 +32,36 @@ function LisaAuto() {
     toast.success("Auto lisatud!");
   }
 
+  const label = { slotProps: { input: { 'aria-label': 'Checkbox demo' } } };
+
+
   return (
     <div>
       <br />
       <div>Ajutine väljakuvamine: {JSON.stringify(auto)}</div>
+      {/* <br />
+      <label>Auto nimi</label> */}
       <br />
-      <label>Auto nimi</label>
+      <TextField label="Auto nimi" variant="outlined" onChange={(e) => setAuto({...auto, name: e.target.value})}/>
+      {/* <input onChange={(e) => setAuto({...auto, name: e.target.value})} type="text" /> */}
       <br />
-      <input onChange={(e) => setAuto({...auto, name: e.target.value})} type="text" />
+      {/* <label>Auto hind</label> */}
       <br />
-      <label>Auto hind</label>
+      <TextField label="Auto hind" variant="outlined" onChange={(e) => setAuto({ ...auto, price: Number(e.target.value) })}/>
+      {/* <input onChange={(e) => setAuto({...auto, price: e.target.value})} type="text" /> */}
       <br />
-      <input onChange={(e) => setAuto({...auto, price: e.target.value})} type="text" />
+      {/* <label>Auto pilt</label> */}
       <br />
-      <label>Auto pilt</label>
-      <br />
-      <input onChange={(e) => setAuto({...auto, image: e.target.value})} type="text" />
+      <TextField label="Auto pilt" variant="outlined" onChange={(e) => setAuto({...auto, image: e.target.value})}/>
+      {/* <input onChange={(e) => setAuto({...auto, image: e.target.value})} type="text" /> */}
       <br />
       <label>Auto aktiivne</label>
       <br />
-      <input onChange={(e) => setAuto({...auto, active: e.target.checked})} type="checkbox" />
+      <Checkbox onChange={(e) => setAuto({...auto, active: e.target.checked})} {...label} defaultChecked />
+      {/* <input onChange={(e) => setAuto({...auto, active: e.target.checked})} type="checkbox" /> */}
       <br />
-      <button onClick={lisa}>Lisa</button>
+      <Button onClick={lisa} variant="contained">Lisa</Button>
+      {/* <button onClick={lisa}>Lisa</button> */}
       <ToastContainer 
         position="bottom-right"
         autoClose={4000}
