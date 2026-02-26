@@ -137,7 +137,8 @@ function Autod() {
             <button>Vt lähemalt</button>
           </Link>
           <button onClick={() => addToCart(car)}>Lisa ostukorvi</button>
-        </div>)}
+        </div>
+      )}
       <br /><br />
       {cars.length} tk
       <button onClick={reset}>Reset</button>
